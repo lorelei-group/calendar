@@ -17,6 +17,10 @@
 				text-align: center;
 				padding-top: 25%;
 			}
+
+			#content {
+				display: none;
+			}
 		</style>
 
 		<!-- EXTERNAL DEPENDENCIES -->
@@ -37,6 +41,15 @@
 
 	<body ng-controller="MasterCtrl">
 		<div id="loader" ng-show="!loaded">Loading...</div>
-		<div id="content" ng-show="loaded" ng-view></div>
+		<div id="content" ng-show="loaded">
+			<div id="sidebar">
+				<div class="switcher">
+					<a href="/day">Day</a>
+					<a href="/week">Week</a>
+					<a href="/month">Month</a>
+				</div>
+			</div>
+			<ng-view></ng-view>
+		</div>
 	</body>
 </html>

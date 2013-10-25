@@ -1,8 +1,8 @@
 {
-  "name": "angular-requirejs-boilerplate",
-  "version": "0.6.0",
-  "description": "A boilerplate for angular/requirejs projects",
-  "repository": "git@github.com:amatiasq/angular-requirejs-boilerplate",
+  "name": "lorelei-calendar",
+  "version": "0.0.0",
+  "description": "",
+  "repository": "git@github.com:lorele-group/calendar",
   "license": "MIT",
   "authors": [
     "A. Matías Quezada <amatiasq@gmail.com>"

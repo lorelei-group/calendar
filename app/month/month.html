@@ -1,0 +1,14 @@
+<div id="month-view">
+	<div class="week" ng-repeat="week in weeks">
+		<div class="day"
+			ng-repeat="day in week"
+			ng-class="{ disabled: !day.enabled }"
+			ng-click="log(day.date)">
+
+			{{ day.date | date:'dd' }}
+			<div class="event" ng-repeat="event in day.events">
+				[{{ event.time | date:'hh:mm' }}] {{ event.title }}
+			</div>
+		</div>
+	</div>
+</div>

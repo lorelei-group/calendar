@@ -1,20 +1,29 @@
 define(function(require) {
 	'use strict';
+	require('month/month');
 
-	require('a/a');
-	require('component/b/b');
-
-	angular.module('boilerplate', [
-		'module-a',
-		'module-b',
+	angular.module('lorelei-calendar', [
+		'lorelei-calendar-month',
 	])
 
-	.controller('MasterCtrl', function($scope, $timeout, test, tast) {
-		console.log(test, tast);
+	.value('firebaseServer', 'http://lorelei.firebaseIO.com/calendar')
+
+	.config(function($routeProvider) {
+		$routeProvider
+			.when('/month', {
+				templateUrl: 'app/month/month.html',
+				controller: 'MonthViewCtrl'
+			})
+			.otherwise({
+				redirectTo: '/month'
+			});
+	})
+
+	.controller('MasterCtrl', function($scope, $timeout) {
 		$timeout(function() {
 			$scope.loaded = true;
 		}, 2000);
 	});
 
-	angular.bootstrap(document.documentElement, [ 'boilerplate' ]);
+	angular.bootstrap(document.documentElement, [ 'lorelei-calendar' ]);
 });

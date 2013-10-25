@@ -1,6 +1,30 @@
 @import "../vendor/reset.less";
-@import "a/a.less";
+@import "month/month.less";
 
 body {
-	//display: flex;
+	display: flex;
 }
+
+#loader {
+	flex: 1;
+}
+
+#content {
+	flex: 1;
+	display: flex;
+	flex-direction: row;
+
+	#sidebar {
+		flex: 1;
+		background-color: #201331;
+
+		transition: flex 1s;
+		&.closed { flex: 0 }
+	}
+
+	ng-view {
+		flex: 7;
+		display: flex;
+	}
+}
+
